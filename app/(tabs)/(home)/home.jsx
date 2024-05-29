@@ -15,6 +15,8 @@ const Home = () => {
         <Link className="text-black" href="/(tabs)/history">Create Prescription</Link>
       </View>
       <PatientCard/>
+      <PatientCard/>
+      <PatientCard/>
       <LargeBtn link={'/(tabs)/profile'}/>
     </SafeAreaView>
   );
