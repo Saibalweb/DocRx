@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import  FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Octicons,FontAwesome } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -13,7 +13,9 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#37B6E9",
+        tabBarInactiveTintColor:"gray",
         headerShown: false,
+        tabBarHideOnKeyboard: true
       }}>
       <Tabs.Screen
         name="(home)"
@@ -38,7 +40,7 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome name={focused?'user-md':'user-o'} size={30} color={focused?color:'black'} />
+            <FontAwesome name={'user-md'} size={30} color={color} />
           ),
         }}
       />

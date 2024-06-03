@@ -13,7 +13,7 @@ export default function Profile() {
       <View className="px-8 my-5">
         <Text className="text-xl font-semibold ">Account</Text>
       </View>
-      <ProfileSection title={"Personal Details"} />
+      <ProfileSection title={"Personal Details"} link={'/personalDetails'}/>
       <ProfileSection title={"Academic Details"} />
       <ProfileSection title={"Add Address"} />
       <View className="m-5">
@@ -22,6 +22,9 @@ export default function Profile() {
       <View className="px-8 my-3">
         <Text className="text-xl font-semibold ">Settings</Text>
       </View>
+      <ProfileSection title={"Set Prescription"}/>
+      <ProfileSection title={"Dark Theme"}/>
+      <ProfileSection title={"Other"}/>
     </SafeAreaView>
   );
 }

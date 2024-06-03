@@ -1,19 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react';
-import { Stack } from 'expo-router';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { Stack } from "expo-router";
 
 const HomeLayout = () => {
   return (
-    <Stack screenOptions={{
+    <Stack
+      screenOptions={{
         headerShown: false,
-    }}>
-        <Stack.Screen name='home'/>
-        <Stack.Screen name='prescription'/>
-        <Stack.Screen name='preview'/>
+        tabBarHideOnKeyboard: true,
+      }}
+    >
+      <Stack.Screen name="home" />
+      <Stack.Screen name="prescription" />
+      <Stack.Screen name="preview" />
+      <Stack.Screen name="searchModal" options={{ presentation: "modal" }} />
     </Stack>
-  )
-}
+  );
+};
 
-export default HomeLayout
+export default HomeLayout;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

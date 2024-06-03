@@ -7,6 +7,7 @@ module.exports = {
         primary:"#37B6E9",
         secondary:"rgba(99, 180, 255,0.1)",
         secondaryDark:"rgba(99, 180, 255,0.5)",
+        accent:"#4894FE",
       }
     },
   },

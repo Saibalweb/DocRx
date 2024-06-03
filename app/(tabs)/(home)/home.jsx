@@ -5,19 +5,19 @@ import { Link } from "expo-router";
 import LargeBtn from "../../../components/LargeBtn";
 import Header from "../../../components/Header";
 import PatientCard from "../../../components/PatientCard";
+import CustomInput from "../../../components/CustomInput";
+import SearchInput from "../../../components/SearchInput";
 
 const Home = () => {
   return (
     <SafeAreaView className="flex-1">
       <Header title={"Home"}/>
-      <View className="justify-center items-center p-10 mb-10 bg-secondary mx-5">
-        <Text className="text-primary text-lg">This is Home</Text>
-        <Link className="text-black" href="/(tabs)/history">Create Prescription</Link>
-      </View>
+      <LargeBtn link={'/prescription'}/>
+      {/* <LargeBtn link={'/preview'}/> */}
       <PatientCard/>
       <PatientCard/>
       <PatientCard/>
-      <LargeBtn link={'/(tabs)/profile'}/>
+      <PatientCard/>
     </SafeAreaView>
   );
 };
