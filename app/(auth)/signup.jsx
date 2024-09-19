@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomInput from '../../components/CustomInput'
 import MIdBtn from '../../components/Prescription/MIdBtn'
 import { Link } from 'expo-router'
+import PasswordInput from '../../components/PasswordInput'
 
 const SignUp = () => {
   return (
@@ -14,8 +15,8 @@ const SignUp = () => {
         <Text className="text-3xl text-accent font-bold my-5 text-center">Sign up to DocRx</Text>
         <View className="mb-10">
           <CustomInput title={"Email"}/>
-          <CustomInput title={"Password"}/>
-          <CustomInput title={"Confirm Password"}/>
+          <PasswordInput title={"Password"}/>
+          <PasswordInput title={"Confirm Password"}/>
         </View>
         <MIdBtn title={"Sign Up"}/>
         </View>

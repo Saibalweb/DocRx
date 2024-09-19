@@ -10,7 +10,9 @@ const index = () => {
     //     <Text>index</Text>
     //   </View>
     // </SafeAreaProvider>
-    <Redirect href={'/(tabs)/(home)/home'}/>
+    // <Redirect href={'/(tabs)/(home)/home'}/>
+    // <Redirect href={'/(auth)/login'}/>
+    <Redirect href={'/(tabs)/(profile)/addAdress'}/>
   );
 };
 

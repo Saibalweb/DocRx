@@ -15,7 +15,7 @@ export default function Profile() {
       </View>
       <ProfileSection title={"Personal Details"} link={'/personalDetails'}/>
       <ProfileSection title={"Academic Details"} />
-      <ProfileSection title={"Add Address"} />
+      <ProfileSection title={"Add Address"} link={'/address'}/>
       <View className="m-5">
         <Hr />
       </View>

@@ -1,10 +1,10 @@
 import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 
-const CustomInput = ({required,title,style,numeric,maxLength}) => {
+const CustomInput = ({required,title,style,numeric,maxLength,widthHalf}) => {
   const [value, setValue] = useState();
   return (
-    <View className="mx-5 my-3 " style={style}>
+    <View className={`mx-5 my-3 ${widthHalf?'w-[40%]':null}`} style={style}>
         <View className="flex-row">
             <Text className="text-lg mr-1 font-semibold">{title}</Text>
             {required && <Text className="text-red-600 text-lg">*</Text>}

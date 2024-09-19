@@ -11,6 +11,8 @@ const ProfileLayout = () => {
     >
       <Stack.Screen name="profile" />
       <Stack.Screen name="personalDetails"/>
+      <Stack.Screen name="address"/>
+      <Stack.Screen name="addAdress"/>
     </Stack>
   );
 };
