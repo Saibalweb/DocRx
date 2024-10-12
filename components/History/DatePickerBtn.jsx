@@ -12,6 +12,7 @@ const DatePickerBtn = () => {
   };
   const handleDate = (date)=>{
     console.log(date);
+    console.log(date.date.toLocaleString());
     setIsVisible(false);
   }
   return (
