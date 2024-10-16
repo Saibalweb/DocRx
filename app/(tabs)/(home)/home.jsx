@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <SafeAreaView className="flex-1">
       <Header title={"Home"}/>
-      <LargeBtn link={'/prescription'}/>
-      {/* <LargeBtn link={'/preview'}/> */}
+      <LargeBtn link={'/(prescription)/patientDetails'}/>
+      <LargeBtn link={'/preview'}/>
       <PatientCard/>
       <PatientCard/>
       <PatientCard/>

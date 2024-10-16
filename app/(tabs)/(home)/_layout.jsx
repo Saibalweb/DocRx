@@ -11,7 +11,7 @@ const HomeLayout = () => {
       }}
     >
       <Stack.Screen name="home" />
-      <Stack.Screen name="prescription" />
+      <Stack.Screen name="(prescription)" />
       <Stack.Screen name="preview" />
       <Stack.Screen name="searchModal" options={{ presentation: "modal" }} />
     </Stack>
