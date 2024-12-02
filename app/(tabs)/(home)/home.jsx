@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
@@ -11,6 +11,7 @@ import SearchInput from "../../../components/SearchInput";
 const Home = () => {
   return (
     <SafeAreaView className="flex-1">
+      <ScrollView>
       <Header title={"Home"}/>
       <LargeBtn link={'/(prescription)/patientDetails'}/>
       <LargeBtn link={'/preview'}/>
@@ -18,6 +19,7 @@ const Home = () => {
       <PatientCard/>
       <PatientCard/>
       <PatientCard/>
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -9,12 +9,13 @@ import Prescribe from "./prescribe";
 const Tab = createMaterialTopTabNavigator();
 const PrescriptionLaytout = () => {
     return (
-        <SafeAreaView style={{flex:1}}>
-        <Tab.Navigator>
-          <Tab.Screen name="Details" component={PatientDetails} /> 
-          <Tab.Screen name="prescribe" component={Prescribe} /> 
-        </Tab.Navigator>
-        </SafeAreaView>
+        <Stack screenOptions={{
+          headerShown: false,
+        }}>
+          <Stack.Screen name="patientDetails"/> 
+          <Stack.Screen name="prescribe"  /> 
+          <Stack.Screen name="searchModal" options={{ presentation: "modal",animation:"fade_from_bottom"}} />
+        </Stack>
       );
 };
 

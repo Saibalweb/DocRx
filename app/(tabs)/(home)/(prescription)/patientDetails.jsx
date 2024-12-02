@@ -5,11 +5,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../../../components/Header";
 import CustomInput from "../../../../components/CustomInput";
 import ModalSelector from "react-native-modal-selector";
-import { RadioButton } from "react-native-paper";
 import RadioBtnSelector from "../../../../components/RadioBtnSelector";
 import SearchInput from "../../../../components/SearchInput";
-import { SegmentedButtons } from "react-native-paper";
 import MIdBtn from "../../../../components/Prescription/MIdBtn";
+import CustomDropdown from "../../../../components/CustomDropdown";
 
 const gender = ["Male", "Female", "Other"];
 const { width, height } = Dimensions.get("window");
@@ -21,32 +20,13 @@ const PatientDetails = () => {
   const [value, setValue] = React.useState("");
   let index = 0;
   const data = [
-    { key: index++, section: true, label: "Select" },
-    { key: index++, label: "Year" },
-    { key: index++, label: "Months" },
-    { key: index++, label: "Days" },
+    { label: "Year",value:"Year" },
+    { label: "Months",value:"Months" },
+    { label: "Days",value:"Days" },
   ];
   return (
     <SafeAreaView className="flex-1">
       {/* <Header title={"Create Prescription"} /> */}
-      {/* <View className="my-5 mx-4">
-        <SegmentedButtons
-          value={value}
-          onValueChange={setValue}
-          buttons={[
-            {
-              value: "walk",
-              label: "Patient's Details",
-            },
-            {
-              value: "train",
-              label: "Prescribe",
-            },
-            // { value: 'drive', label: 'Driving' },
-          ]}
-          theme={{colors:{primaryContainer:"#4894FE"}}}
-        />
-      </View> */}
       <View className="flex-1 mb-12" style={{ width: width }}>
         <ScrollView className="flex-1">
           <Text className="my-4 mx-5 text-2xl text-accent font-bold underline">
@@ -57,31 +37,11 @@ const PatientDetails = () => {
             <CustomInput
               title={"Age"}
               required
-              style={{ width: "80%" }}
+              style={{ width: "50%" }}
               numeric
               maxLength={3}
             />
-            {/* <ModalSelector
-        data={data}
-        initValue="Select something yummy!"
-        supportedOrientations={["landscape"]}
-        accessible={true}
-        scrollViewAccessibilityLabel={"Scrollable options"}
-        cancelButtonAccessibilityLabel={"Cancel Button"}
-        onChange={(option) => console.log(option)}
-      >
-        <TextInput
-          style={{
-            borderBottomWidth: 1.5,
-            borderColor: "red",
-            padding: 10,
-            height: 50,
-            width: 60,
-          }}
-          editable={false}
-          placeholder="Age"
-        />
-        </ModalSelector> */}
+            <CustomDropdown placeholder={'Year'} width={'30%'} data={data}/>
           </View>
           <CustomInput title={"Weight"} numeric maxLength={3} />
           <CustomInput title={"Mobile No."} numeric maxLength={10} />
@@ -105,8 +65,9 @@ const PatientDetails = () => {
           <Text className="my-4 mx-5 text-2xl text-accent font-bold underline">
             Medical History
           </Text>
-          <SearchInput />
-          <SearchInput />
+          <SearchInput searchIcon={false} />
+          <SearchInput  searchIcon={false}/>
+          <MIdBtn title={'Prescribe'} link={'/prescribe'} />
         </ScrollView>
       </View>
     </SafeAreaView>
