@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const intialAuthState = {
-  id: "",
+  _id: "",
   name: "",
   email: "",
   token: "",
@@ -24,7 +24,6 @@ const authSlice = createSlice({
       state.isLoggedin = true;
     },
     login(state, action) {
-      console.log('loginDispatch--->',action.payload);
       const { _id, name, email, token } = action.payload;
       state._id = _id;
       state.email = email;
@@ -60,7 +59,6 @@ const userSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     addUser(state, action) {
-      console.log('paylod-->',action.payload);
       const {
         _id,
         name,

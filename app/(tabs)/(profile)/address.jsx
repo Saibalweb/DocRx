@@ -4,8 +4,10 @@ import React from "react";
 import Header from "../../../components/Header";
 import { Link } from "expo-router";
 import AddressBlock from "../../../components/address/AddressBlock";
+import { useSelector } from "react-redux";
 
 const Address = () => {
+  const address = useSelector(state=>state.user.dispensaryAddress);
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header title={"Address"} back />
@@ -17,12 +19,9 @@ const Address = () => {
             </View>
           </TouchableOpacity>
         </Link>
-        <AddressBlock/>
-        <AddressBlock/>
-        <AddressBlock/>
-        <AddressBlock/>
-        <AddressBlock/>
-        <AddressBlock/>
+        {
+          address.map((item, index) => <AddressBlock key={item._id} dispensaryAddress={item}/>)
+        }
       </ScrollView>
     </SafeAreaView>
   );

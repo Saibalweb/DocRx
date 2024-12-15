@@ -2,7 +2,8 @@ import { Text, View } from "react-native";
 import React, { useState } from "react";
 import { RadioButton } from "react-native-paper";
 
-const AddressBlock = () => {
+const AddressBlock = ({dispensaryAddress}) => {
+  const {streetName,practiceHours,dispensaryName,city,state,postal,practiceDays,_id}= dispensaryAddress;
     const [selected,setSelected]= useState(true);
   return (
     <View className="p-2 m-2 border-primary border rounded-lg bg-slate-100">
@@ -13,10 +14,13 @@ const AddressBlock = () => {
           console.log('this')
         }}    
       />
-      <Text className="text-lg ">JeevanSathi Clinic</Text>
-      <Text className="text-lg">Bargachia Sakal Bazar </Text>
-      <Text className="text-lg">Bargachia,WestBengal-711404,India</Text>
-      <Text className="text-lg">8:00am -12:00pm</Text>
+      {dispensaryName && <Text className="text-lg ">{dispensaryName}</Text>}
+      <Text className="text-lg">{`${streetName}`} </Text>
+      <Text className="text-lg">{`${city},${state}-${postal}`}</Text>
+      <View className="flex-row">
+        {practiceDays.map((item,index)=><Text key={index} className="text-lg mr-1">{item}</Text>)}
+      </View>
+      <Text className="text-lg">{`${practiceHours.startTime}-${practiceHours.endTime}`}</Text>
     </View>
   );
 };

@@ -1,8 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 
-const CustomInput = ({required,title,style,numeric,maxLength,widthHalf}) => {
-  const [value, setValue] = useState();
+const CustomInput = ({required,title,style,numeric,maxLength,widthHalf,value,editable,onChangeText,placeholder}) => {
   return (
     <View className={`mx-5 my-3 ${widthHalf?'w-[40%]':null}`} style={style}>
         <View className="flex-row">
@@ -14,6 +13,10 @@ const CustomInput = ({required,title,style,numeric,maxLength,widthHalf}) => {
         cursorColor={"#37B6E9"}
         keyboardType={numeric? "numeric" : "default"}
         maxLength={maxLength?maxLength:200}
+        value={value}
+        editable={editable}
+        onChangeText={onChangeText}
+        placeholder={placeholder|| ""}
       />
     </View>
   );
