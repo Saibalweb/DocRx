@@ -1,38 +1,50 @@
 ![DocRx-cover](./Readme_assets/DocRx_cover.png)
-## Get started
+## Built With
+<div>
+   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="js" />
+   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt='react-native'/> 
+  <img src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white" alt='expo' />
+  <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt='redux'/> 
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt='tailwind'/> 
 
-1. Install dependencies
+</div>
 
-   ```bash
-   npm install
-   ```
+## BackEnd of This Project
+This is FrontEnd (Expo App) of The Project. 
+For BackEnd Code-
+<pre>
+Please Visit - <a href="https://github.com/Saibalweb/DocRx_Server" target="_blank">DocRx-Server</a>
+</pre>
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
+## About This Project
+DocRx is a mobile application that allows users to create and manage their own medical records.In the fast-paced world of healthcare, the ability to manage prescriptions accurately and efficiently is paramount. Traditional paper-based prescriptions are prone to errors, can be easily lost, and require significant administrative effort. DocRx addresses these challenges by offering a digital solution that enhances the accuracy, accessibility, and security of prescription records.
 
-In the output, you'll find options to open the app in a
+### Purpose
+* **Streamline Prescription Creation**: Simplify the process for doctors to create detailed and accurate digital prescriptions.
+* **Enhance Patient Management**: Securely store patient information and provide easy access to their prescription history.
+* **Ensure Data Security**: Implement robust security measures to protect sensitive patient data.
+* **Improve Accessibility**: Allow and doctors to access prescription records anytime and anywhere.
+* **Reduce Administrative Burden**: Minimize the paperwork and manual errors associated with traditional prescription methods.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Key Features 
+* Prescription creation and storage for doctors.
+* Patient information management with secure digital records.
+* Notifications and reminders for patients to ensure medication adherence.
+* API integration capabilities for extended healthcare system connectivity.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Benefits
+* Eliminates errors from handwritten prescriptions.
+* Ensures accessibility and secure data storage.
+* Enhances user experience with a modern, intuitive UI.
 
-## Get a fresh project
+### Stack
+* **Frontend**: React Native, Expo, Tailwind CSS.
+* **Backend**: Node.js, Express.js.
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
+## Learn more About Expo
 
 To learn more about developing your project with Expo, look at the following resources:
 
