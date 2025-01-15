@@ -8,8 +8,8 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/mainIcon.png",
-      "resizeMode": "contain",
+      "image": "./assets/images/DocRx-Splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/mainIcon.png",
+        "foregroundImage": "./assets/images/DocRx.png",
         "backgroundColor": "#ffffff"
       }
     },
