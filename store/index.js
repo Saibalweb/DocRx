@@ -44,6 +44,7 @@ const authSlice = createSlice({
 const initialUserState = {
   id: "",
   name: "",
+  regNo:"",
   email: "",
   isCompleted: false,
   dispensaryAddress: null,
@@ -62,6 +63,7 @@ const userSlice = createSlice({
       const {
         _id,
         name,
+        regNo,
         email,
         isCompleted,
         dispensaryAddress,
@@ -74,6 +76,7 @@ const userSlice = createSlice({
       } = action.payload.user;
       state._id = _id;
       state.name = name;
+      state.regNo= regNo;
       state.email = email;
       state.isCompleted = isCompleted;
       state.dispensaryAddress = dispensaryAddress;
