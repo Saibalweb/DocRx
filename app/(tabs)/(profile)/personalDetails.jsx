@@ -25,7 +25,7 @@ import Toast from 'react-native-simple-toast';
 const PersonalDetails = () => {
   const userInfo = useSelector((state) => state.user);
   const token = useSelector(state=>state.auth.token);
-  const [regNo, setRegNo] = useState("");
+  const [regNo, setRegNo] = useState(userInfo?.regNo);
   const [degree, setDegree] = useState(userInfo.degree);
   const [specialisation, setSpecialisation] = useState(userInfo.specialisation);
   const [specialisationDegree, setSpecialisationDegree] = useState(
