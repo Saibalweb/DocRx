@@ -13,6 +13,8 @@ import DetailsChip from "../../../components/DetailsChip";
 import moment from "moment";
 import AuthBtn from "../../../components/AuthBtn";
 import Toast from "react-native-simple-toast";
+import { post } from "../../../utils/requestBuilder";
+import { useSelector } from "react-redux";
 
 const practiceDaysData = [
   { label: "Monday", value: 0, name: "MON" },
@@ -25,13 +27,13 @@ const practiceDaysData = [
 ];
 
 const addAdress = () => {
+  const token = useSelector((state) => state.auth.token);
   const [streetName, setStreetName] = useState("");
   const [dispensaryName, setDispensaryName] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [postal, setPostal] = useState("");
   const [practiceDays, setPracticeDays] = useState([]);
-  const [practiceHours, setPracticeHours] = useState(null);
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
 
@@ -64,7 +66,7 @@ const addAdress = () => {
       Toast.show("Please Enter streetName,city,state,postal",Toast.LONG);
       return;
     }
-    const addAdressUrl = process.env.EXPO_PUBLIC_API_URL;
+    const addAdressUrl = `${process.env.EXPO_PUBLIC_API_URL}/doctor/add-address`;
     const body = JSON.stringify({
       streetName,
       dispensaryName,
@@ -77,7 +79,20 @@ const addAdress = () => {
         endTime
       }
     });
-    console.log(body);
+    const res = await post(addAdressUrl,body,token,"json");
+    if(res?.statusCode===201){
+      Toast.show("Successfully added Address!",Toast.LONG);
+      setCity("");
+      setDispensaryName("");
+      setPostal("");
+      setState("");
+      setStreetName("");
+      setPracticeDays([]);
+      setStartTime("");
+      setEndTime("");
+    }else {
+      Toast.show("Failed to add Address!",Toast.LONG);
+    }
   };
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -87,15 +102,18 @@ const addAdress = () => {
           title={"Dispensary Address"}
           required
           onChangeText={(text) => setStreetName(text)}
+          placeholder={'eg- 123,xyz street'}
         />
         <CustomInput
           title={"Dispensary/Clinic Name(if Any)"}
           onChangeText={(text) => setDispensaryName(text)}
+          placeholder={'eg- XYZ Clinic'}
         />
         <CustomInput
           title={"City/Town"}
           required
           onChangeText={(text) => setCity(text)}
+          placeholder={'eg- Kolkata'}
         />
         <View className="flex-row">
           <CustomInput
@@ -103,12 +121,14 @@ const addAdress = () => {
             required
             widthHalf
             onChangeText={(text) => setState(text)}
+            placeholder={'eg- west bengal'}
           />
           <CustomInput
             title={"Postal"}
             required
             widthHalf
             onChangeText={(text) => setPostal(text)}
+            placeholder={'eg- 700001'}
           />
         </View>
 
@@ -118,7 +138,7 @@ const addAdress = () => {
             placeholder={"Please select days of Practice"}
             data={practiceDaysData}
             onChange={practiceDaysHandler}
-            selectedLabel={practiceDays?practiceDays[practiceDays.length-1]:null}
+            // selectedLabel={practiceDays?practiceDays[practiceDays.length-1]:null}
           />
           {practiceDays.length!==0 && (
             <ChipContainer>

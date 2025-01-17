@@ -14,8 +14,10 @@ const gender = ["Male", "Female", "Other"];
 const { width, height } = Dimensions.get("window");
 
 const PatientDetails = () => {
-  const [selected, setSelected] = useState("");
-  const [checked, setChecked] = useState("first");
+  const [name,setName] = useState('');
+  const [age,setAge] = useState('');
+  const [weight,setWeight] = useState('');
+  const [mobile,setMobile] = useState('');
   const [selectedGender, setSelectedGender] = useState(0);
   const [value, setValue] = React.useState("");
   let index = 0;
@@ -41,7 +43,7 @@ const PatientDetails = () => {
               numeric
               maxLength={3}
             />
-            <CustomDropdown placeholder={'Year'} width={'30%'} data={data}/>
+            <CustomDropdown placeholder={'Year'} width={'30%'} data={data} onChange={(item)=>console.log(item)}/>
           </View>
           <CustomInput title={"Weight"} numeric maxLength={3} />
           <CustomInput title={"Mobile No."} numeric maxLength={10} />
@@ -65,8 +67,12 @@ const PatientDetails = () => {
           <Text className="my-4 mx-5 text-2xl text-accent font-bold underline">
             Medical History
           </Text>
-          <SearchInput searchIcon={false} />
-          <SearchInput  searchIcon={false}/>
+          <SearchInput searchIcon={false} title={'Chronic Disease'}/>
+          <SearchInput  searchIcon={false} title={'Allergy'}/>
+          <SearchInput  searchIcon={false} title={'Family Disease'}/>
+          <SearchInput  searchIcon={false} title={'Previous Surgery'}/>
+          <SearchInput  searchIcon={false} title={'Social History'}/>
+          <SearchInput  searchIcon={false} title={'Drug History'}/>
           <MIdBtn title={'Prescribe'} link={'/prescribe'} />
         </ScrollView>
       </View>
