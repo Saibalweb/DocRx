@@ -1,4 +1,4 @@
-![DocRx-cover](./Readme_assets/DocRx_cover.png)
+![DocRx-cover](https://github.com/Saibalweb/DocRx/blob/master/Readme_assets/DocRx_cover.png)
 ## Built With
 <div>
    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="js" />
